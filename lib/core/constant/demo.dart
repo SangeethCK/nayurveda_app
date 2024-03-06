@@ -14,6 +14,23 @@ class CommonFunction {
     DropDownValue(id: 1, value: 'Kollam'),
     DropDownValue(id: 1, value: 'Thiruvanadapuram'),
   ];
+
+  List<DropDownValue> date = [
+    DropDownValue(id: 1, value: 'Monday'),
+    DropDownValue(id: 1, value: 'Tuesday'),
+    DropDownValue(id: 1, value: 'Wednesday'),
+    DropDownValue(id: 1, value: 'Thurusday'),
+    DropDownValue(id: 1, value: 'Friday'),
+    DropDownValue(id: 1, value: 'Saturday'),
+    DropDownValue(id: 1, value: 'Sunday'),
+  ];
+
+  String? validateIsEmpty(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'This field is required';
+    }
+    return null;
+  }
 }
 
 class AddTreatment {
@@ -21,5 +38,5 @@ class AddTreatment {
   String? female;
   String? value;
 
-   AddTreatment({this.male,this.female,this.value});
+  AddTreatment({this.male, this.female, this.value});
 }

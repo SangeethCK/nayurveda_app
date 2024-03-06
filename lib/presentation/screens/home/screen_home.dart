@@ -1,8 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nayurveda_app/application/home/home_state.dart';
 import 'package:nayurveda_app/core/constant/color.dart';
+import 'package:nayurveda_app/core/constant/demo.dart';
 import 'package:nayurveda_app/core/constant/sizes.dart';
 import 'package:nayurveda_app/core/routes/routes.dart';
 import 'package:nayurveda_app/domain/models/home/home_response.dart';
@@ -58,15 +58,16 @@ class _ScreenHomeState extends ConsumerState<ScreenHome> {
           MainPadding(
             child: Row(
               children: [
-                const Flexible(
+                Flexible(
                   child: TextFeildWidget(
                     hintText: 'Search for treatments',
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.search,
                       color: Colors.grey,
                       size: 28,
                     ),
                     borderColor: Colors.grey,
+                    
                   ),
                 ),
                 kWidth10,
@@ -101,9 +102,9 @@ class _ScreenHomeState extends ConsumerState<ScreenHome> {
                     width: 169,
                     child: CommonDropdown(
                       radius: 24,
-                      dropDownValue: const [],
-                      hintText: '',
-                      onChanged: () {},
+                      dropDownValue: CommonFunction().date,
+                      hintText: 'Date',
+                      onChanged: (v) {},
                     ))
               ],
             ),

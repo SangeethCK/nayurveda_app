@@ -3,16 +3,24 @@ import 'package:flutter_svg/svg.dart';
 import 'package:nayurveda_app/core/constant/sizes.dart';
 
 class TreatMentListWidget extends StatelessWidget {
-  final String ?name;
-  final String ?maleCount;
- final String?femaleCoun;
-  const TreatMentListWidget({super.key,this.femaleCoun,this.maleCount,this.name});
+  final String? name;
+  final String? maleCount;
+  final String? femaleCoun;
+  final Function remove;
+  final Function edit;
+  const TreatMentListWidget(
+      {super.key,
+      this.femaleCoun,
+      this.maleCount,
+      this.name,
+      required this.edit,
+      required this.remove});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(6),
-      margin: const EdgeInsets.only(top: 10,bottom: 10),
+      margin: const EdgeInsets.only(top: 10, bottom: 10),
       height: 110,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -33,14 +41,19 @@ class TreatMentListWidget extends StatelessWidget {
                 Expanded(
                   child: Row(
                     children: [
-                       Expanded(
+                      Expanded(
                         child: Text(
-                         name??"",
+                          name ?? "",
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
-                      SvgPicture.asset(
-                          'assets/images/carbon_close-filled (1).svg')
+                      InkWell(
+                        onTap: () {
+                          remove();
+                        },
+                        child: SvgPicture.asset(
+                            'assets/images/carbon_close-filled (1).svg'),
+                      )
                     ],
                   ),
                 ),
@@ -65,7 +78,7 @@ class TreatMentListWidget extends StatelessWidget {
                         ),
                         height: 26,
                         width: 44,
-                        child:  Center(child: Text(maleCount??"")),
+                        child: Center(child: Text(maleCount ?? "")),
                       ),
                     ],
                   ),
@@ -82,12 +95,17 @@ class TreatMentListWidget extends StatelessWidget {
                         ),
                         height: 26,
                         width: 44,
-                        child:  Center(child: Text(femaleCoun??'')),
+                        child: Center(child: Text(femaleCoun ?? '')),
                       ),
                     ],
                   ),
-                  SvgPicture.asset(
-                      'assets/images/material-symbols_edit-outline.svg')
+                  InkWell(
+                    onTap: () {
+                      edit();
+                    },
+                    child: SvgPicture.asset(
+                        'assets/images/material-symbols_edit-outline.svg'),
+                  )
                 ],
               ),
             ),

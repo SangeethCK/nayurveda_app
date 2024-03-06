@@ -1,6 +1,5 @@
 import 'dart:developer';
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nayurveda_app/application/register/register_state.dart';
@@ -33,7 +32,8 @@ class RegisterNotifier extends StateNotifier<RegisterState> {
 
   //=-=-=-= Add Register =-=-=-=-=
 
-  Future<void> addRegister({RegisterRequest? datRequest,required BuildContext context}) async {
+  Future<void> addRegister(
+      {RegisterRequest? datRequest, required BuildContext context}) async {
     try {
       state = state.copyWith(isLoading: true);
       final response =
@@ -120,5 +120,29 @@ class RegisterNotifier extends StateNotifier<RegisterState> {
     state = state.copyWith(
         selectedBranch: value, treatmentData: state.treatmentData);
     log("HELLOPPP ${state.selectedBranch?.id}");
+  }
+
+  void removeTreatment(int i) {
+    if (state.addTreatment != null &&
+        i >= 0 &&
+        i < state.addTreatment!.length) {
+      final List<AddTreatment> updatedList = List.from(state.addTreatment!);
+      updatedList.removeAt(i);
+      state = state.copyWith(addTreatment: updatedList);
+    }
+  }
+
+  void editTreatment(AddTreatment updatedTreatment) {
+    if (state.addTreatment != null) {
+      final List<AddTreatment> updatedList = List.from(state.addTreatment!);
+      final int index = updatedList.indexWhere((treatment) =>
+          treatment.value == updatedTreatment.value &&
+          treatment.male == updatedTreatment.male &&
+          treatment.female == updatedTreatment.female);
+      if (index != -1) {
+        updatedList[index] = updatedTreatment;
+        state = state.copyWith(addTreatment: updatedList);
+      }
+    }
   }
 }

@@ -75,7 +75,7 @@ class TextFeildWidget extends StatelessWidget {
   final BoxConstraints? suffixIconConstraints;
   final TextEditingController? controller;
   final AutovalidateMode? autovalidateMode;
-  final String? Function(String?)? validator;
+  final FormFieldValidator? validator;
   final FocusNode? focusNode;
   final bool? enabled;
   final bool? readOnly;
