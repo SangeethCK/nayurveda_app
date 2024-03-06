@@ -1,6 +1,7 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:nayurveda_app/core/constant/color.dart';
+import 'package:nayurveda_app/presentation/widgets/text/text_utils.dart';
 
 import 'models/drop_down.dart';
 
@@ -159,8 +160,8 @@ class CommonDropdown extends StatelessWidget {
         hintText,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
-        style: const TextStyle(
-          color: Color(0xffCBD2E0),
+        style: TextUtils.theme.titleSmall?.copyWith(
+          color: const Color(0xffCBD2E0),
           fontSize: 10,
         ),
       );
@@ -187,7 +188,7 @@ class CommonDropdown extends StatelessWidget {
           children: [
             Expanded(
               child: Text(item?.value ?? '',
-                  style: const TextStyle(
+                  style: TextUtils.theme.titleSmall?.copyWith(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                     letterSpacing: 0,

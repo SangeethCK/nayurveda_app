@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nayurveda_app/presentation/widgets/text/text_utils.dart';
 
 SnackBar snackBarWidget(
   String content, {
@@ -10,7 +11,7 @@ SnackBar snackBarWidget(
     duration: duration ?? const Duration(seconds: 2),
     content: Text(
       content,
-      style: const TextStyle(
+      style: TextUtils.theme.titleSmall?.copyWith(
         color: Colors.white,
         fontSize: 15,
         fontWeight: FontWeight.w500,

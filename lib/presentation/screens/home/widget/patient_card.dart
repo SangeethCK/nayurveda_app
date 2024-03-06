@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nayurveda_app/core/constant/color.dart';
 import 'package:nayurveda_app/core/constant/sizes.dart';
+import 'package:nayurveda_app/presentation/widgets/text/text_utils.dart';
 
 class PatientCard extends StatelessWidget {
   const PatientCard(
@@ -37,14 +38,14 @@ class PatientCard extends StatelessWidget {
                     children: [
                       Text(
                         regId.toString(),
-                        style: const TextStyle(
+                        style:  TextUtils.theme.titleSmall?.copyWith(
                             fontWeight: FontWeight.w500,
                             fontSize: 18,
                             color: kBlack),
                       ),
                       kWidth10,
                       Text(name,
-                          style: const TextStyle(
+                          style:  TextUtils.theme.titleSmall?.copyWith(
                               fontWeight: FontWeight.w500,
                               fontSize: 18,
                               color: kBlack))
@@ -55,7 +56,7 @@ class PatientCard extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 15),
                     child: Text(
                       address,
-                      style: const TextStyle(
+                      style:TextUtils.theme.titleSmall?.copyWith(
                           fontWeight: FontWeight.w300,
                           fontSize: 16,
                           color: primaryColor),

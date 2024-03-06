@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nayurveda_app/core/constant/color.dart';
 import 'package:nayurveda_app/core/constant/sizes.dart';
+import 'package:nayurveda_app/presentation/widgets/text/text_utils.dart';
 
 class TreatMentListWidget extends StatelessWidget {
   final String? name;
@@ -37,9 +38,9 @@ class TreatMentListWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text(
+                 Text(
                   '1.',
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+                  style: TextUtils.theme.titleSmall?.copyWith(fontWeight: FontWeight.w500, fontSize: 18),
                 ),
                 kWidth14,
                 Expanded(
@@ -49,7 +50,7 @@ class TreatMentListWidget extends StatelessWidget {
                         child: Text(
                           name ?? "",
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
+                          style: TextUtils.theme.titleSmall?.copyWith(
                               fontWeight: FontWeight.w500, fontSize: 18),
                         ),
                       ),
@@ -73,9 +74,9 @@ class TreatMentListWidget extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      const Text(
+                       Text(
                         'Male',
-                        style: TextStyle(
+                        style:TextUtils.theme.titleSmall?.copyWith(
                             color: primaryColor,
                             fontWeight: FontWeight.w400,
                             fontSize: 16),
@@ -93,7 +94,7 @@ class TreatMentListWidget extends StatelessWidget {
                         child: Center(
                             child: Text(
                           maleCount ?? "",
-                          style: const TextStyle(
+                          style:TextUtils.theme.titleSmall?.copyWith(
                               color: primaryColor,
                               fontWeight: FontWeight.w400,
                               fontSize: 13),
@@ -103,9 +104,9 @@ class TreatMentListWidget extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      const Text(
+                       Text(
                         'Female',
-                        style: TextStyle(
+                        style:TextUtils.theme.titleSmall?.copyWith(
                             color: primaryColor,
                             fontWeight: FontWeight.w400,
                             fontSize: 16),
@@ -123,7 +124,7 @@ class TreatMentListWidget extends StatelessWidget {
                         child: Center(
                             child: Text(
                           femaleCoun ?? '',
-                          style: const TextStyle(
+                          style: TextUtils.theme.titleSmall?.copyWith(
                               color: primaryColor,
                               fontWeight: FontWeight.w400,
                               fontSize: 13),

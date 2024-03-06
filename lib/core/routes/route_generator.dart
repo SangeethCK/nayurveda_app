@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:nayurveda_app/core/routes/routes.dart';
 import 'package:nayurveda_app/presentation/screens/auth/screen_login.dart';
 import 'package:nayurveda_app/presentation/screens/home/screen_home.dart';
 import 'package:nayurveda_app/presentation/screens/register/screen_register.dart';
 import 'package:nayurveda_app/presentation/screens/splash/screen_splash.dart';
+import 'package:nayurveda_app/presentation/widgets/text/text_utils.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoue(RouteSettings routeSettings) {
@@ -34,8 +34,8 @@ class RouteGenerator {
         body: Center(
           child: Text(
             error ?? '${argsError ? 'Arguments' : 'Navitation'} Error',
-            style: const TextStyle(
-                fontWeight: FontWeight.w600, color: Colors.black54),
+            style: TextUtils.theme.titleSmall
+                ?.copyWith(fontWeight: FontWeight.w600, color: Colors.black54),
           ),
         ),
       ),

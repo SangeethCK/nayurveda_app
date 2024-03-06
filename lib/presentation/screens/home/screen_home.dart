@@ -58,16 +58,15 @@ class _ScreenHomeState extends ConsumerState<ScreenHome> {
           MainPadding(
             child: Row(
               children: [
-                Flexible(
+                const Flexible(
                   child: TextFeildWidget(
                     hintText: 'Search for treatments',
-                    prefixIcon: const Icon(
+                    prefixIcon: Icon(
                       Icons.search,
                       color: Colors.grey,
                       size: 28,
                     ),
                     borderColor: Colors.grey,
-                    
                   ),
                 ),
                 kWidth10,
@@ -77,10 +76,11 @@ class _ScreenHomeState extends ConsumerState<ScreenHome> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       color: primaryColor),
-                  child: const Center(
+                  child: Center(
                       child: Text(
                     'Search',
-                    style: TextStyle(color: Colors.white),
+                    style: TextUtils.theme.titleSmall
+                        ?.copyWith(color: Colors.white),
                   )),
                 )
               ],

@@ -106,7 +106,7 @@ class TextFeildWidget extends StatelessWidget {
                 TextSpan(text: topLabelText!, children: [
                   TextSpan(
                       text: isRequired ? ' *' : '',
-                      style: const TextStyle(color: Colors.red))
+                      style: TextUtils.theme.titleSmall?.copyWith(color: Colors.red))
                 ]),
                 style: TextUtils.theme.labelLarge?.copyWith(
                     color: const Color(0xff404040),

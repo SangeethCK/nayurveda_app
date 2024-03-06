@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:nayurveda_app/core/constant/color.dart';
+import 'package:nayurveda_app/presentation/widgets/text/text_utils.dart';
 
 class DatePickerContainer extends StatefulWidget {
   final String? hintText;
@@ -106,7 +107,7 @@ class _DatePickerContainerState extends State<DatePickerContainer> {
                             widget.isDisable == true ? '' : pickedDate ?? '',
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
+                            style: TextUtils.theme.titleSmall?.copyWith(
                                 color: Colors.black,
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500),
@@ -115,7 +116,7 @@ class _DatePickerContainerState extends State<DatePickerContainer> {
                             widget.hintText ?? '',
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
+                            style: TextUtils.theme.titleSmall?.copyWith(
                                 color: Color(0xff828691),
                                 fontSize: 10,
                                 fontWeight: FontWeight.w500),

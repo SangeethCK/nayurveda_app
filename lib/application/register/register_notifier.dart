@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
@@ -8,6 +10,7 @@ import 'package:nayurveda_app/domain/models/rgeister/register_request.dart';
 import 'package:nayurveda_app/infrastructure/register/resgister_repository.dart';
 import 'package:nayurveda_app/main.dart';
 import 'package:nayurveda_app/presentation/widgets/dropdown/models/drop_down.dart';
+import 'package:nayurveda_app/presentation/widgets/text/text_utils.dart';
 
 import '../../core/constant/demo.dart';
 
@@ -41,14 +44,14 @@ class RegisterNotifier extends StateNotifier<RegisterState> {
           await RegisterRepository().addRegister(dataRequest: datRequest);
       if (response == true) {
         log('Successfully Added');
-        rootScaffoldMessengerKey.currentState?.showSnackBar(const SnackBar(
+        rootScaffoldMessengerKey.currentState?.showSnackBar( SnackBar(
           content: Text(
             'Successfully Registered!',
-            style: TextStyle(color: kWhite, fontWeight: FontWeight.bold),
+            style: TextUtils.theme.titleSmall?.copyWith(color: kWhite, fontWeight: FontWeight.bold),
           ),
           backgroundColor: primaryColor,
         ));
-        // Navigator.pop(context);
+       Navigator.pop(context);
       }
     } catch (e) {
       log("$e");

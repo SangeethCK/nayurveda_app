@@ -83,31 +83,31 @@ class ScreenLogin extends ConsumerWidget {
                       color: Colors.grey[200],
                       child: RichText(
                           textAlign: TextAlign.center,
-                          text: const TextSpan(
+                          text:  TextSpan(
                               text:
                                   'By creating or logging into an account you are agreeing with our  and Privacy Policy.',
-                              style: TextStyle(
+                              style: TextUtils.theme.titleSmall?.copyWith(
                                   color: Colors.black,
                                   fontSize: 12,
                                   fontWeight: FontWeight.w300),
                               children: [
                                 TextSpan(
                                   text: 'Terms and Conditions',
-                                  style: TextStyle(
+                                  style: TextUtils.theme.titleSmall?.copyWith(
                                       color: Colors.blue,
                                       fontSize: 12,
                                       fontWeight: FontWeight.w300),
                                 ),
                                 TextSpan(
                                   text: ' and ',
-                                  style: TextStyle(
+                                  style: TextUtils.theme.titleSmall?.copyWith(
                                       color: Colors.black,
                                       fontSize: 12,
                                       fontWeight: FontWeight.w300),
                                 ),
                                 TextSpan(
                                   text: 'Privacy Policy.',
-                                  style: TextStyle(
+                                  style: TextUtils.theme.titleSmall?.copyWith(
                                       color: Colors.blue,
                                       fontSize: 12,
                                       fontWeight: FontWeight.w300),

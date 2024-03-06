@@ -252,9 +252,9 @@ class ScreenRegister extends ConsumerWidget {
                   value: apiFormat.format(DateTime.now()),
                 ),
                 kHeight10,
-                const Text(
+                 Text(
                   'Treatment Time',
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
+                  style:TextUtils.theme.titleSmall?.copyWith(fontWeight: FontWeight.w400, fontSize: 16),
                 ),
                 Row(
                   children: [
