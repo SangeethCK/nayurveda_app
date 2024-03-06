@@ -120,22 +120,32 @@ class _ScreenHomeState extends ConsumerState<ScreenHome> {
                 List<PatientLists> patientList = state.patientList ?? [];
                 return state.isLoading
                     ? const Center(child: CircularProgressIndicator())
-                    : ListView.builder(
-                        physics: const AlwaysScrollableScrollPhysics(),
-                        itemCount: patientList.length,
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          final data = patientList[index];
-                          return PatientCard(
-                            regId: int.parse(data.id.toString()),
-                            address: data.address ?? '',
-                            date: apiFormat
-                                .format(data.dateNdTime ?? DateTime.now()),
-                            name: data.name ?? '',
-                            userName: data.user ?? '',
+                    : patientList.isEmpty
+                        ? Center(
+                            child: Padding(
+                            padding: const EdgeInsets.only(top: 40),
+                            child: Text(
+                              'No Data',
+                              style: TextUtils.theme.titleSmall?.copyWith(
+                                  fontWeight: FontWeight.w600, fontSize: 18),
+                            ),
+                          ))
+                        : ListView.builder(
+                            physics: const AlwaysScrollableScrollPhysics(),
+                            itemCount: patientList.length,
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) {
+                              final data = patientList[index];
+                              return PatientCard(
+                                regId: int.parse(data.id.toString()),
+                                address: data.address ?? '',
+                                date: apiFormat
+                                    .format(data.dateNdTime ?? DateTime.now()),
+                                name: data.name ?? '',
+                                userName: data.user ?? '',
+                              );
+                            },
                           );
-                        },
-                      );
               },
             ),
           )
