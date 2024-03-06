@@ -54,37 +54,31 @@ class ScreenRegister extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TextFeildWidget(
-                    topLabelText: 'Name',
-                    labelText: 'Enter your name',
-                    controller: ref.watch(RegisterProvider.name),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'This field is required';
-                      }
-                      return null;
-                    }),
+                  topLabelText: 'Name',
+                  labelText: 'Enter your name',
+                  controller: ref.watch(RegisterProvider.name),
+                  validator: (value) {
+                    return CommonFunction().validateIsEmpty(value);
+                  },
+                ),
                 kHeight10,
                 TextFeildWidget(
-                    topLabelText: 'Whatsapp Number',
-                    labelText: 'Enter your Whatsapp Number',
-                    controller: ref.watch(RegisterProvider.whatsApp),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'This field is required';
-                      }
-                      return null;
-                    }),
+                  topLabelText: 'Whatsapp Number',
+                  labelText: 'Enter your Whatsapp Number',
+                  controller: ref.watch(RegisterProvider.whatsApp),
+                  validator: (value) {
+                    return CommonFunction().validateIsEmpty(value);
+                  },
+                ),
                 kHeight10,
                 TextFeildWidget(
-                    topLabelText: 'Address',
-                    labelText: 'Enter your full Address',
-                    controller: ref.watch(RegisterProvider.address),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'This field is required';
-                      }
-                      return null;
-                    }),
+                  topLabelText: 'Address',
+                  labelText: 'Enter your full Address',
+                  controller: ref.watch(RegisterProvider.address),
+                  validator: (value) {
+                    return CommonFunction().validateIsEmpty(value);
+                  },
+                ),
                 kHeight10,
                 const Text('Locations'),
                 kHeight10,
@@ -148,6 +142,7 @@ class ScreenRegister extends ConsumerWidget {
                 Consumer(
                   builder: (context, ref, child) {
                     final data = ref.read(RegisterProvider.addData.notifier);
+
                     ref.watch(RegisterProvider.loadTreatment);
                     return CustomMaterialBtton(
                       borderColor: Colors.transparent,
@@ -155,6 +150,7 @@ class ScreenRegister extends ConsumerWidget {
                       buttonText: '+ Add Treatments',
                       textColor: Colors.black87,
                       onPressed: () {
+            ref.read(RegisterProvider.addData.notifier).resetCounts();
                         dialogBuilder(context,
                             save: () {
                               ref
@@ -204,26 +200,22 @@ class ScreenRegister extends ConsumerWidget {
                   },
                 ),
                 TextFeildWidget(
-                    topLabelText: 'Total Amount',
-                    labelText: '',
-                    controller: ref.watch(RegisterProvider.totalAmount),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'This field is required';
-                      }
-                      return null;
-                    }),
+                  topLabelText: 'Total Amount',
+                  labelText: '',
+                  controller: ref.watch(RegisterProvider.totalAmount),
+                  validator: (value) {
+                    return CommonFunction().validateIsEmpty(value);
+                  },
+                ),
                 kHeight10,
                 TextFeildWidget(
-                    topLabelText: 'Discount Amount',
-                    labelText: '',
-                    controller: ref.watch(RegisterProvider.disocuntAmount),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'This field is required';
-                      }
-                      return null;
-                    }),
+                  topLabelText: 'Discount Amount',
+                  labelText: '',
+                  controller: ref.watch(RegisterProvider.disocuntAmount),
+                  validator: (value) {
+                    return CommonFunction().validateIsEmpty(value);
+                  },
+                ),
                 const Text('Payment Option'),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -234,25 +226,21 @@ class ScreenRegister extends ConsumerWidget {
                   ],
                 ),
                 TextFeildWidget(
-                    topLabelText: 'Advance Amount',
-                    labelText: '',
-                    controller: ref.watch(RegisterProvider.advanceAmount),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'This field is required';
-                      }
-                      return null;
-                    }),
+                  topLabelText: 'Advance Amount',
+                  labelText: '',
+                  controller: ref.watch(RegisterProvider.advanceAmount),
+                  validator: (value) {
+                    return CommonFunction().validateIsEmpty(value);
+                  },
+                ),
                 TextFeildWidget(
-                    topLabelText: 'Balance Amount',
-                    labelText: '',
-                    controller: ref.watch(RegisterProvider.balanceAmount),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'This field is required';
-                      }
-                      return null;
-                    }),
+                  topLabelText: 'Balance Amount',
+                  labelText: '',
+                  controller: ref.watch(RegisterProvider.balanceAmount),
+                  validator: (value) {
+                    return CommonFunction().validateIsEmpty(value);
+                  },
+                ),
                 kHeight10,
                 const Text('Payment Option'),
                 kHeight10,

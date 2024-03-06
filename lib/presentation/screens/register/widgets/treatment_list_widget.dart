@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nayurveda_app/core/constant/color.dart';
 import 'package:nayurveda_app/core/constant/sizes.dart';
 
 class TreatMentListWidget extends StatelessWidget {
@@ -36,7 +37,10 @@ class TreatMentListWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text('1.'),
+                const Text(
+                  '1.',
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+                ),
                 kWidth14,
                 Expanded(
                   child: Row(
@@ -45,6 +49,8 @@ class TreatMentListWidget extends StatelessWidget {
                         child: Text(
                           name ?? "",
                           overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                              fontWeight: FontWeight.w500, fontSize: 18),
                         ),
                       ),
                       InkWell(
@@ -67,7 +73,13 @@ class TreatMentListWidget extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      const Text('Male'),
+                      const Text(
+                        'Male',
+                        style: TextStyle(
+                            color: primaryColor,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16),
+                      ),
                       kWidth10,
                       Container(
                         decoration: BoxDecoration(
@@ -78,13 +90,26 @@ class TreatMentListWidget extends StatelessWidget {
                         ),
                         height: 26,
                         width: 44,
-                        child: Center(child: Text(maleCount ?? "")),
+                        child: Center(
+                            child: Text(
+                          maleCount ?? "",
+                          style: const TextStyle(
+                              color: primaryColor,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 13),
+                        )),
                       ),
                     ],
                   ),
                   Row(
                     children: [
-                      const Text('Female'),
+                      const Text(
+                        'Female',
+                        style: TextStyle(
+                            color: primaryColor,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16),
+                      ),
                       kWidth10,
                       Container(
                         decoration: BoxDecoration(
@@ -95,7 +120,14 @@ class TreatMentListWidget extends StatelessWidget {
                         ),
                         height: 26,
                         width: 44,
-                        child: Center(child: Text(femaleCoun ?? '')),
+                        child: Center(
+                            child: Text(
+                          femaleCoun ?? '',
+                          style: const TextStyle(
+                              color: primaryColor,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 13),
+                        )),
                       ),
                     ],
                   ),

@@ -145,4 +145,8 @@ class RegisterNotifier extends StateNotifier<RegisterState> {
       }
     }
   }
+
+  void resetCounts() {
+    state = state.copyWith(maleCount: 0, femaleCount: 0);
+  }
 }
