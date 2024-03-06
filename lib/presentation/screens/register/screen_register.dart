@@ -150,7 +150,9 @@ class ScreenRegister extends ConsumerWidget {
                       buttonText: '+ Add Treatments',
                       textColor: Colors.black87,
                       onPressed: () {
-            ref.read(RegisterProvider.addData.notifier).resetCounts();
+                        ref
+                            .read(RegisterProvider.addData.notifier)
+                            .resetCounts();
                         dialogBuilder(context,
                             save: () {
                               ref
@@ -259,15 +261,15 @@ class ScreenRegister extends ConsumerWidget {
                     Flexible(
                         flex: 4,
                         child: CommonDropdown(
-                            hintText: '',
-                            dropDownValue: const [],
+                            hintText: 'Hour',
+                            dropDownValue: CommonFunction().hour,
                             onChanged: () {})),
                     kWidth10,
                     Flexible(
                         flex: 4,
                         child: CommonDropdown(
                             hintText: '',
-                            dropDownValue: const [],
+                            dropDownValue: CommonFunction().mini,
                             onChanged: () {}))
                   ],
                 ),

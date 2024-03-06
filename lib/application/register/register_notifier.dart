@@ -12,7 +12,8 @@ import 'package:nayurveda_app/presentation/widgets/dropdown/models/drop_down.dar
 import '../../core/constant/demo.dart';
 
 class RegisterNotifier extends StateNotifier<RegisterState> {
-  RegisterNotifier() : super(RegisterState(addTreatment: []));
+  RegisterNotifier()
+      : super(RegisterState(addTreatment: [], selectedPaymentMethod: 'Cash'));
   Future<void> loadBranch() async {
     try {
       state = state.copyWith(isLoading: true);
@@ -148,5 +149,9 @@ class RegisterNotifier extends StateNotifier<RegisterState> {
 
   void resetCounts() {
     state = state.copyWith(maleCount: 0, femaleCount: 0);
+  }
+
+  void togglePaymentMethod(String newMethod) {
+    state = state.copyWith(selectedPaymentMethod: newMethod);
   }
 }

@@ -25,6 +25,29 @@ class CommonFunction {
     DropDownValue(id: 1, value: 'Sunday'),
   ];
 
+  List<DropDownValue> hour = [
+    DropDownValue(id: 1, value: '1 Hour'),
+    DropDownValue(id: 1, value: '2 Hour'),
+    DropDownValue(id: 1, value: '3 Hour'),
+    DropDownValue(id: 1, value: '4 Hour'),
+    DropDownValue(id: 1, value: '5 Hour'),
+    DropDownValue(id: 1, value: '6 Hour'),
+    DropDownValue(id: 1, value: '8 Hour'),
+    DropDownValue(id: 1, value: '9 Hour'),
+    DropDownValue(id: 1, value: '10 Hour'),
+    DropDownValue(id: 1, value: '11 Hour'),
+    DropDownValue(id: 1, value: '12 Hour'),
+  ];
+
+  List<DropDownValue> mini = [
+    DropDownValue(id: 1, value: '10 mini'),
+    DropDownValue(id: 1, value: '20 mini'),
+    DropDownValue(id: 1, value: '30 mini'),
+    DropDownValue(id: 1, value: '40 mini'),
+    DropDownValue(id: 1, value: '50 mini'),
+    DropDownValue(id: 1, value: '60 mini'),
+  ];
+
   String? validateIsEmpty(String? value) {
     if (value == null || value.isEmpty) {
       return 'This field is required';

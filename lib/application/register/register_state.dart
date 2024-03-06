@@ -1,4 +1,3 @@
-
 import 'package:nayurveda_app/core/constant/demo.dart';
 import 'package:nayurveda_app/domain/models/rgeister/branch_list.dart';
 import 'package:nayurveda_app/domain/models/rgeister/treatment_response.dart';
@@ -19,7 +18,8 @@ class RegisterState {
   List<DropDownValue>? treatmentData;
   DropDownValue? selectedTreatment;
   DropDownValue? selectedLocation;
-  DropDownValue ?selectedBranch;
+  DropDownValue? selectedBranch;
+  final String selectedPaymentMethod;
 
   RegisterState(
       {this.isLoading = false,
@@ -36,6 +36,7 @@ class RegisterState {
       this.selectedTreatment,
       this.selectedBranch,
       this.selectedLocation,
+      this.selectedPaymentMethod = 'Cash',
       this.treatmentData});
 
   RegisterState copyWith({
@@ -50,11 +51,13 @@ class RegisterState {
     List<AddTreatment>? addTreatment,
     int? maleCount,
     int? femaleCount,
-    final List<TreatmentLists>? treamnetList,
+     List<TreatmentLists>? treamnetList,
     List<DropDownValue>? treatmentData,
     DropDownValue? selectedTreatment,
-      DropDownValue? selectedLocation,
-  DropDownValue ?selectedBranch,
+    DropDownValue? selectedLocation,
+    DropDownValue? selectedBranch,
+      String ?selectedPaymentMethod,
+
   }) {
     return RegisterState(
         isLoading: isLoading ?? this.isLoading,
@@ -69,8 +72,10 @@ class RegisterState {
         addTreatment: addTreatment ?? this.addTreatment,
         treamnetList: treamnetList ?? this.treamnetList,
         treatmentData: treatmentData ?? this.treatmentData,
-        selectedBranch: selectedBranch??this.selectedBranch,
-        selectedLocation: selectedLocation?? this.selectedLocation,
-        selectedTreatment: selectedTreatment ?? this.selectedTreatment);
+        selectedBranch: selectedBranch ?? this.selectedBranch,
+        selectedLocation: selectedLocation ?? this.selectedLocation,
+        selectedTreatment: selectedTreatment ?? this.selectedTreatment,
+        selectedPaymentMethod: selectedPaymentMethod??this.selectedPaymentMethod
+        );
   }
 }

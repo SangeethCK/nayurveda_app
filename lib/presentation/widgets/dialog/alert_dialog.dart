@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nayurveda_app/core/constant/color.dart';
@@ -29,6 +27,7 @@ dialogBuilder(
           ref.watch(RegisterProvider.loadTreatment);
 
           return AlertDialog(
+            backgroundColor: const Color(0xffFFFFFF),
             title: const Text('Choose Treatment'),
             content: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,8 +39,6 @@ dialogBuilder(
                             .read(RegisterProvider.loadTreatment)
                             .treatmentData ??
                         [],
-
-                      
                     onChanged: (v) {
                       onChanged(v);
                     }),
